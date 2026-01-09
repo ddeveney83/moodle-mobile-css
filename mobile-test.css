@@ -1,0 +1,131 @@
+/* =========================================
+   Moodle App - Mobile CSS test pack
+   Purpose: Make it obvious the CSS is loading,
+   and demonstrate what can be styled safely.
+   ========================================= */
+
+/* 1) Global: add a subtle tinted background so you can instantly confirm it works */
+ion-app,
+ion-content,
+.core-mainmenu-tabs ion-content {
+  --background: #f6f7fb !important;
+}
+
+/* 2) Header / toolbar */
+ion-header ion-toolbar,
+.core-header-toolbar {
+  --background: #111827 !important;  /* near-black */
+  --color: #ffffff !important;
+  border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+}
+
+/* Title styling */
+ion-header ion-title,
+.core-header-toolbar .toolbar-title,
+.core-header-toolbar h1 {
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+}
+
+/* 3) Tab bar (bottom navigation) */
+ion-tab-bar,
+.core-mainmenu-tabs ion-tab-bar {
+  --background: #ffffff !important;
+  border-top: 1px solid rgba(17,24,39,0.10) !important;
+}
+
+/* Tab icons/labels (default state) */
+ion-tab-button {
+  --color: rgba(17,24,39,0.70) !important;
+}
+
+/* Active tab */
+ion-tab-button.tab-selected {
+  --color: #111827 !important;
+}
+
+/* 4) Cards / list items – make them feel more modern */
+ion-card,
+.core-course-list-item,
+.core-block-content ion-item,
+ion-item.ion-activatable {
+  border-radius: 14px !important;
+}
+
+/* Give cards a soft shadow */
+ion-card {
+  box-shadow: 0 8px 20px rgba(17,24,39,0.08) !important;
+}
+
+/* Improve list spacing */
+ion-list {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+ion-item {
+  --padding-start: 14px !important;
+  --inner-padding-end: 14px !important;
+  --min-height: 54px !important;
+}
+
+/* 5) Buttons */
+ion-button {
+  --border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+
+/* Primary buttons: darker + crisp */
+ion-button.button-solid {
+  --background: #111827 !important;
+  --color: #ffffff !important;
+}
+
+/* Outline buttons */
+ion-button.button-outline {
+  --border-color: rgba(17,24,39,0.35) !important;
+  --color: #111827 !important;
+}
+
+/* 6) Links */
+a,
+.core-link,
+ion-label a {
+  color: #0f172a !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+}
+
+/* 7) Make interactive elements easier to spot (useful for UX testing) */
+ion-item.ion-activatable,
+ion-button,
+a {
+  outline: none !important;
+}
+
+ion-item.ion-activatable:focus-within,
+ion-button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.35) !important; /* blue glow */
+  border-radius: 12px !important;
+}
+
+/* =========================================
+   OPTIONAL “can we hide stuff?” tests
+   Uncomment ONE at a time.
+   ========================================= */
+
+/* Example A: Hide the search icon globally (test only) */
+/*
+ion-header ion-buttons[slot="end"] {
+  display: none !important;
+}
+*/
+
+/* Example B: Hide the bottom tab bar completely (test only) */
+/*
+ion-tab-bar,
+.core-mainmenu-tabs ion-tab-bar {
+  display: none !important;
+}
+*/
